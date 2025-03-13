@@ -168,20 +168,6 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("18_cp3ir")
-}, {
-"duration": 1.0,
-"texture": ExtResource("19_xisnk")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_enqsa")
-}],
-"loop": true,
-"name": &"small_eun",
-"speed": 10.0
-}, {
-"frames": [{
-"duration": 1.0,
 "texture": ExtResource("1_c3boj")
 }],
 "loop": true,
@@ -203,6 +189,20 @@ animations = [{
 "loop": true,
 "name": &"small_pole",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("18_cp3ir")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_xisnk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_enqsa")
+}],
+"loop": true,
+"name": &"small_run",
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -278,7 +278,7 @@ SPEED = 300.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l6j6i")
-animation = &"big_to_shooting"
+animation = &"small_run"
 script = ExtResource("25_iq6vy")
 
 [node name="Area2D" type="Area2D" parent="."]
