@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bbd1cchxb20u2" path="res://Assets/Sprites/Bush1.png" id="6_tthj4"]
 [ext_resource type="Texture2D" uid="uid://ggrv7avq2vw" path="res://Assets/Sprites/Bush2.png" id="7_tiyvd"]
 [ext_resource type="Texture2D" uid="uid://j6grr7g688fn" path="res://Assets/Sprites/Bush3.png" id="8_uqjrc"]
-[ext_resource type="PackedScene" uid="uid://gtft6u86x7u7" path="res://Cenas/SmallMario.tscn" id="9_e1m2o"]
+[ext_resource type="PackedScene" uid="uid://gtft6u86x7u7" path="res://Cenas/Player.tscn" id="9_e1m2o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_cjqoi"]
 texture = ExtResource("1_ahhpq")
