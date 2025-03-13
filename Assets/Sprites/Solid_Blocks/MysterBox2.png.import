@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbhkvad8kmca"
-path="res://.godot/imported/UndergroundBlock.png-07c4263e27a9453b5ea41fdac08d33a7.ctex"
+uid="uid://n3wf4wh4jvb8"
+path="res://.godot/imported/MysterBox2.png-11afc410b985132c98bc9ebd92b088f3.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UndergroundBlock.png"
-dest_files=["res://.godot/imported/UndergroundBlock.png-07c4263e27a9453b5ea41fdac08d33a7.ctex"]
+source_file="res://Assets/Sprites/Solid_Blocks/MysterBox2.png"
+dest_files=["res://.godot/imported/MysterBox2.png-11afc410b985132c98bc9ebd92b088f3.ctex"]
 
 [params]
 

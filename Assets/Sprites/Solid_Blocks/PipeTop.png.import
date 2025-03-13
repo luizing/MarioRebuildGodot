@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dtkrgfs1x5qrr"
-path="res://.godot/imported/UndergroundBrick.png-0bcf837c16876602b4acfd5d24c3bb81.ctex"
+uid="uid://b5sqfy41h20ks"
+path="res://.godot/imported/PipeTop.png-ea7ef01d321e1c7ee1b4c0b7f1cd33b9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/UndergroundBrick.png"
-dest_files=["res://.godot/imported/UndergroundBrick.png-0bcf837c16876602b4acfd5d24c3bb81.ctex"]
+source_file="res://Assets/Sprites/Solid_Blocks/PipeTop.png"
+dest_files=["res://.godot/imported/PipeTop.png-ea7ef01d321e1c7ee1b4c0b7f1cd33b9.ctex"]
 
 [params]
 

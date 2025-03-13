@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bh2i2pbd72n30"
-path="res://.godot/imported/GroundBlock.png-6776d228816474876d698a2b99d98733.ctex"
+uid="uid://co3bdq1m4vg4f"
+path="res://.godot/imported/Brick.png-4654a18b92784d7d3d16b4afd239365b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/GroundBlock.png"
-dest_files=["res://.godot/imported/GroundBlock.png-6776d228816474876d698a2b99d98733.ctex"]
+source_file="res://Assets/Sprites/Solid_Blocks/Brick.png"
+dest_files=["res://.godot/imported/Brick.png-4654a18b92784d7d3d16b4afd239365b.ctex"]
 
 [params]
 
