@@ -1,11 +1,16 @@
 extends CharacterBody2D
 class_name Player
+
+signal points_scored(points:int) 
+
 enum PlayerMode{small,big,shooting}
-
+var player_mode = PlayerMode.small
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
-
+const points_label_scene = preload("res://Cenas/points_label.tscn")
+var is_dead = false
 
 @onready var animated_sprite_2d = $AnimatedSprite2D as PlayerAnimatedSprite
+@onready var area_2d = $Area2D
 @onready var area_colision_shape_2d = $Area2D/AreaColisao
 @onready var body_colision_shape_2d = $CollisionShape2D
 
@@ -14,7 +19,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 @export var SPEED = 100.0
 @export var JUMP_VELOCITY = -350.0
 
-var player_mode = PlayerMode.small
+@export_group("Stomping Enemies")
+@export var min_stomp_degree = 35
+@export var max_stomp_degree = 145
+@export var stomp_y_velocity = -150
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,3 +45,43 @@ func _physics_process(delta: float) -> void:
 	animated_sprite_2d.trigger_animation(velocity, direction, player_mode)
 
 	move_and_slide()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	if area is Enemy:
+		handle_enemy_collision(area)
+
+func handle_enemy_collision(enemy: Enemy):
+	if enemy == null || is_dead: 
+		return
+	if is_instance_of(enemy, Koopa) and (enemy as Koopa).in_a_shell:
+		(enemy as Koopa).on_stomp(global_position)
+	else:
+		var angle_of_collision = rad_to_deg(position.angle_to_point(enemy.position))
+		
+		if angle_of_collision > min_stomp_degree && max_stomp_degree > angle_of_collision:
+			enemy.die()
+			on_enemy_stomped()
+			spawn_points_label(enemy)
+		else:
+			die()
+		
+func on_enemy_stomped():
+	velocity.y = stomp_y_velocity
+	
+func spawn_points_label(enemy):
+	var points_label = points_label_scene.instantiate()
+	points_label.position = enemy.position + Vector2(-20, -20)
+	get_tree().root.add_child(points_label)
+	points_scored.emit(100)
+	
+func die():
+	if player_mode == PlayerMode.small:
+		is_dead = true
+		animated_sprite_2d.play("small_death")
+		set_physics_process(false)
+
+		var death_tween = get_tree().create_tween()
+		death_tween.tween_property(self, "position", position + Vector2(0, -45), .5)
+		death_tween.chain().tween_property(self, "position", position + Vector2(0, 500), 1)
+		death_tween.tween_callback(func (): get_tree().reload_current_scene())
