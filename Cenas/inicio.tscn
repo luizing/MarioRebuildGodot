@@ -1,0 +1,37 @@
+[gd_scene load_steps=2 format=3 uid="uid://brgoqrrt5ii6d"]
+
+[ext_resource type="Script" path="res://Cenas/inicio.gd" id="1_mvp50"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_mvp50")
+
+[node name="Titulo" type="Label" parent="."]
+layout_mode = 0
+offset_left = -76.0
+offset_top = 38.0
+offset_right = 82.0
+offset_bottom = 61.0
+text = "Super Mario Rebuild"
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="."]
+layout_mode = 0
+offset_left = -34.0
+offset_top = 76.0
+offset_right = 23.0
+offset_bottom = 107.0
+text = "Iniciar"
+
+[node name="Selecionar" type="Button" parent="."]
+layout_mode = 0
+offset_left = -63.0
+offset_top = 127.0
+offset_right = 69.0
+offset_bottom = 158.0
+text = "Selecao de nivel"
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
