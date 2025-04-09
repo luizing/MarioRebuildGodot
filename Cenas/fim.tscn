@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://k6pckyy4em3k"]
+
+[node name="Node" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(5, 5)
+
+[node name="Label" type="Label" parent="Camera2D"]
+offset_left = -46.0
+offset_top = -13.0
+offset_right = 214.0
+offset_bottom = 96.0
+text = "Fim de jogo"

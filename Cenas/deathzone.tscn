@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://b5ld1lbmnio2s"]
+[gd_scene load_steps=3 format=3 uid="uid://tjp5jsax7gyj"]
 
-[ext_resource type="Script" path="res://inicio.gd" id="1_bohlp"]
-[ext_resource type="FontFile" uid="uid://dm3ch1vmt4ixr" path="res://Assets/Fonts/font.ttf" id="2_pf1a6"]
+[ext_resource type="FontFile" uid="uid://dm3ch1vmt4ixr" path="res://Assets/Fonts/font.ttf" id="1_15r1a"]
+[ext_resource type="Script" path="res://Cenas/deathzone.gd" id="1_l1t44"]
 
 [node name="Node" type="Node"]
-script = ExtResource("1_bohlp")
+script = ExtResource("1_l1t44")
 
 [node name="Titulo" type="Label" parent="."]
 offset_left = -84.0
 offset_top = -71.0
 offset_right = 82.0
 offset_bottom = -39.0
-theme_override_fonts/font = ExtResource("2_pf1a6")
+theme_override_fonts/font = ExtResource("1_15r1a")
 theme_override_font_sizes/font_size = 26
-text = "Mario Rebuild"
+text = "GameOver"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -23,7 +23,7 @@ offset_left = -28.0
 offset_top = -16.0
 offset_right = 29.0
 offset_bottom = 15.0
-text = "Iniciar"
+text = "Reiniciar"
 metadata/_edit_use_anchors_ = true
 
 [node name="Camera2D" type="Camera2D" parent="."]

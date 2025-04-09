@@ -2,5 +2,5 @@ extends Control
 
 
 func _on_StartButton_pressed():
-	# Mude para a cena do jogo principal
-	get_tree().change_scene("re")
+	print("button")
+	get_tree().change_scene_to_file("res://Cenas/main.tscn")

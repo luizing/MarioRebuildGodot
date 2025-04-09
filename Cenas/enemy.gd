@@ -3,13 +3,15 @@ extends Area2D
 class_name Enemy
 
 signal points_scored(points:int)
+signal enemy_died
 const points_label_scene = preload("res://Cenas/points_label.tscn")
 
-@export var horizontal_speed = 20
+@export var horizontal_speed = 0
 @export var vertical_speed = 100
 @onready var ray_cast_2d = $RayCast2D as RayCast2D
 @onready var animated_sprite_2d = $AnimatedSprite2D as AnimatedSprite2D
 func _process(delta: float) -> void:
+	
 	position.x -= horizontal_speed * delta
 	
 	if !ray_cast_2d.is_colliding():
@@ -19,6 +21,7 @@ func die():
 	horizontal_speed = 0
 	vertical_speed = 0
 	animated_sprite_2d.play("dead")
+	emit_signal("enemy_died")
 	
 func die_from_hit():
 	set_collision_layer_value(3, false)

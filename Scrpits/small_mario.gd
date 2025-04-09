@@ -16,7 +16,7 @@ var is_dead = false
 
 @export_group ('Locomoçao')
 @export var run_speed_damping = 0.5
-@export var SPEED = 100.0
+@export var SPEED = 150.0
 @export var JUMP_VELOCITY = -350.0
 
 @export_group("Stomping Enemies")
@@ -25,9 +25,20 @@ var is_dead = false
 @export var stomp_y_velocity = -150
 
 func _physics_process(delta: float) -> void:
+	
+	if global_position.y > 500:  # Ajuste o valor para a altura de "queda"
+			get_tree().change_scene_to_file("res://Cenas/deathzone.tscn")
+	
 	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
+
+
+	if Input.is_action_just_pressed("ui_p"):  # Tecla P pressionada
+		get_tree().change_scene_to_file("res://Cenas/fase2.tscn")
+		
+	if Input.is_action_just_pressed("ui_f"):  # Tecla P pressionada
+		get_tree().change_scene_to_file("res://Cenas/fim.tscn")
 
 	# Handle jump.
 	if Input.is_action_just_pressed("pular") and is_on_floor():
@@ -50,6 +61,8 @@ func _physics_process(delta: float) -> void:
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	if area is Enemy:
 		handle_enemy_collision(area)
+	else:
+		die()
 
 func handle_enemy_collision(enemy: Enemy):
 	if enemy == null || is_dead: 
@@ -85,3 +98,5 @@ func die():
 		death_tween.tween_property(self, "position", position + Vector2(0, -45), .5)
 		death_tween.chain().tween_property(self, "position", position + Vector2(0, 500), 1)
 		death_tween.tween_callback(func (): get_tree().reload_current_scene())
+		await get_tree().create_timer(1.0).timeout
+		get_tree().change_scene_to_file("res://Cenas/deathzone.tscn")

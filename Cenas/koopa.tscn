@@ -30,7 +30,7 @@ animations = [{
 
 [node name="Koopa" type="Area2D"]
 collision_layer = 4
-collision_mask = 9
+collision_mask = 3
 script = ExtResource("1_g5u7i")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

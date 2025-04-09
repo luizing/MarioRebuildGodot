@@ -1,0 +1,127 @@
+[gd_scene load_steps=26 format=4 uid="uid://bkn71httmxgih"]
+
+[ext_resource type="PackedScene" uid="uid://gtft6u86x7u7" path="res://Cenas/Player.tscn" id="1_6rjbo"]
+[ext_resource type="Script" path="res://Cenas/fase_2.gd" id="1_xfxdw"]
+[ext_resource type="Texture2D" uid="uid://co3bdq1m4vg4f" path="res://Assets/Sprites/Solid_Blocks/Brick.png" id="2_i45te"]
+[ext_resource type="Texture2D" uid="uid://dxstf3eeggcla" path="res://Assets/Sprites/Solid_Blocks/EmptyBlock.png" id="3_rhqou"]
+[ext_resource type="Texture2D" uid="uid://bh2i2pbd72n30" path="res://Assets/Sprites/Solid_Blocks/GroundBlock.png" id="4_hljkt"]
+[ext_resource type="Texture2D" uid="uid://8as4lix1a8pr" path="res://Assets/Sprites/Solid_Blocks/HardBlock.png" id="5_c0452"]
+[ext_resource type="Texture2D" uid="uid://n3wf4wh4jvb8" path="res://Assets/Sprites/Solid_Blocks/MysterBox2.png" id="6_ou4y2"]
+[ext_resource type="Texture2D" uid="uid://cv5q5jjpotegk" path="res://Assets/Sprites/Solid_Blocks/MysteryBlock.png" id="7_ae81v"]
+[ext_resource type="Texture2D" uid="uid://cw5a4ngls41r5" path="res://Assets/Sprites/Solid_Blocks/MysteryBox1.png" id="8_crgvn"]
+[ext_resource type="Texture2D" uid="uid://cdp0d1a4cvakq" path="res://Assets/Sprites/Solid_Blocks/PipeBottom.png" id="9_c0ymr"]
+[ext_resource type="Texture2D" uid="uid://8hx0hwj6028f" path="res://Assets/Sprites/Solid_Blocks/PipeConnection.png" id="10_3wco7"]
+[ext_resource type="Texture2D" uid="uid://b5sqfy41h20ks" path="res://Assets/Sprites/Solid_Blocks/PipeTop.png" id="11_xc76d"]
+[ext_resource type="PackedScene" uid="uid://bgumvrm6qov42" path="res://Cenas/doorteste.tscn" id="13_c0uy1"]
+[ext_resource type="Script" path="res://Cenas/doorteste2.gd" id="14_xoo8j"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mfqy3"]
+texture = ExtResource("2_i45te")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dsi6t"]
+texture = ExtResource("3_rhqou")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nnux"]
+texture = ExtResource("4_hljkt")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ftoqu"]
+texture = ExtResource("5_c0452")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glh1a"]
+texture = ExtResource("6_ou4y2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bqfyo"]
+texture = ExtResource("7_ae81v")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_x0iqu"]
+texture = ExtResource("8_crgvn")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uv0w8"]
+texture = ExtResource("9_c0ymr")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w76rp"]
+texture = ExtResource("10_3wco7")
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kc4k5"]
+texture = ExtResource("11_xc76d")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xaal2"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 13
+sources/0 = SubResource("TileSetAtlasSource_mfqy3")
+sources/1 = SubResource("TileSetAtlasSource_dsi6t")
+sources/2 = SubResource("TileSetAtlasSource_6nnux")
+sources/3 = SubResource("TileSetAtlasSource_ftoqu")
+sources/4 = SubResource("TileSetAtlasSource_glh1a")
+sources/5 = SubResource("TileSetAtlasSource_bqfyo")
+sources/6 = SubResource("TileSetAtlasSource_x0iqu")
+sources/7 = SubResource("TileSetAtlasSource_uv0w8")
+sources/8 = SubResource("TileSetAtlasSource_w76rp")
+sources/9 = SubResource("TileSetAtlasSource_kc4k5")
+
+[node name="Fase2" type="Node"]
+script = ExtResource("1_xfxdw")
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_6rjbo")]
+position = Vector2(-57, 46)
+collision_mask = 134
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+position = Vector2(57, -46)
+zoom = Vector2(2.75, 2.75)
+
+[node name="Label" type="Label" parent="CharacterBody2D/Camera2D"]
+offset_left = -206.0
+offset_top = -115.0
+offset_right = 123.0
+offset_bottom = -66.0
+text = "Timer: "
+
+[node name="TileMapSolidSurface" type="TileMapLayer" parent="."]
+position = Vector2(12, 0)
+tile_map_data = PackedByteArray("AAD1/wQAAAAAAAAAAAD2/wQAAAAAAAAAAAD3/wQAAAAAAAAAAAD4/wQAAAAAAAAAAAD5/wQAAAAAAAAAAAD6/wQAAAAAAAAAAAD7/wQAAAAAAAAAAAD8/wQAAAAAAAAAAAD9/wQAAAAAAAAAAAD9/wUAAAAAAAAAAAD+/wUAAAAAAAAAAAD//wUAAAAAAAAAAAAAAAUAAAAAAAAAAAABAAUAAAAAAAAAAAABAAQAAAAAAAAAAAACAAMAAAAAAAAAAAADAAMAAAAAAAAAAAADAAIAAAAAAAAAAAAEAAEAAAAAAAAAAAAFAAEAAAAAAAAAAAAFAAAAAAAAAAAAAAAGAAAAAAAAAAAAAAAHAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAJAAAAAAAAAAAAAAAKAAAAAAAAAAAAAAAKAP//AAAAAAAAAAALAP//AAAAAAAAAAAMAP//AAAAAAAAAAANAP//AAAAAAAAAAAOAP//AAAAAAAAAAAPAP//AAAAAAAAAAAQAP//AAAAAAAAAAARAP//AAAAAAAAAAASAP//AAAAAAAAAAATAP//AAAAAAAAAAAUAP//AAAAAAAAAAAVAP//AAAAAAAAAAAVAP7/AAAAAAAAAAAWAP7/AAAAAAAAAAAXAP7/AAAAAAAAAAAYAP7/AAAAAAAAAAAZAP7/AAAAAAAAAAAaAP7/AAAAAAAAAAAbAP7/AAAAAAAAAAAcAP7/AAAAAAAAAAAdAP7/AAAAAAAAAAAeAP7/AAAAAAAAAAAfAP7/AAAAAAAAAAAfAP3/AAAAAAAAAAAgAP3/AAAAAAAAAAAhAP3/AAAAAAAAAAAiAPz/AAAAAAAAAAAjAPz/AAAAAAAAAAAkAPv/AAAAAAAAAAAlAPv/AAAAAAAAAAAmAPv/AAAAAAAAAAAnAPv/AAAAAAAAAAAoAPv/AAAAAAAAAAApAPv/AAAAAAAAAAAqAPv/AAAAAAAAAAArAPv/AAAAAAAAAAAsAPv/AAAAAAAAAAAtAPv/AAAAAAAAAAAuAPv/AAAAAAAAAAAvAPv/AAAAAAAAAAAwAPr/AAAAAAAAAAAxAPv/AAAAAAAAAAAyAPv/AAAAAAAAAAAyAPr/AAAAAAAAAAAzAPr/AAAAAAAAAAA0APr/AAAAAAAAAAA1APr/AAAAAAAAAAA2APr/AAAAAAAAAAA3APr/AAAAAAAAAAA3APn/AAAAAAAAAAA4APn/AAAAAAAAAAA5APn/AAAAAAAAAAA6APn/AAAAAAAAAAA7APn/AAAAAAAAAAA8APn/AAAAAAAAAAA9APn/AAAAAAAAAAA+APn/AAAAAAAAAAA/APn/AAAAAAAAAABAAPj/AAAAAAAAAABBAPj/AAAAAAAAAABCAPj/AAAAAAAAAABDAPj/AAAAAAAAAABEAPj/AAAAAAAAAABFAPj/AAAAAAAAAAA=")
+tile_set = SubResource("TileSet_xaal2")
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="Label" type="Label" parent="."]
+offset_left = -181.0
+offset_top = -60.0
+offset_right = 146.0
+offset_bottom = -37.0
+text = "Chegue ao castelo antes do tempo acabar!"
+
+[node name="Area2D" parent="." instance=ExtResource("13_c0uy1")]
+position = Vector2(1084, -167)
+script = ExtResource("14_xoo8j")
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

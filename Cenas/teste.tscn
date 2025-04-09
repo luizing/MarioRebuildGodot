@@ -1,0 +1,91 @@
+[gd_scene load_steps=22 format=4 uid="uid://jt428r3lvhry"]
+
+[ext_resource type="Texture2D" uid="uid://co3bdq1m4vg4f" path="res://Assets/Sprites/Solid_Blocks/Brick.png" id="1_bgik6"]
+[ext_resource type="Texture2D" uid="uid://dxstf3eeggcla" path="res://Assets/Sprites/Solid_Blocks/EmptyBlock.png" id="2_yqkdv"]
+[ext_resource type="Texture2D" uid="uid://bh2i2pbd72n30" path="res://Assets/Sprites/Solid_Blocks/GroundBlock.png" id="3_5qs17"]
+[ext_resource type="Texture2D" uid="uid://8as4lix1a8pr" path="res://Assets/Sprites/Solid_Blocks/HardBlock.png" id="4_7smx2"]
+[ext_resource type="Texture2D" uid="uid://n3wf4wh4jvb8" path="res://Assets/Sprites/Solid_Blocks/MysterBox2.png" id="5_jcgxg"]
+[ext_resource type="Texture2D" uid="uid://cv5q5jjpotegk" path="res://Assets/Sprites/Solid_Blocks/MysteryBlock.png" id="6_j6u1x"]
+[ext_resource type="Texture2D" uid="uid://cw5a4ngls41r5" path="res://Assets/Sprites/Solid_Blocks/MysteryBox1.png" id="7_qch5v"]
+[ext_resource type="Texture2D" uid="uid://cdp0d1a4cvakq" path="res://Assets/Sprites/Solid_Blocks/PipeBottom.png" id="8_07kip"]
+[ext_resource type="Texture2D" uid="uid://8hx0hwj6028f" path="res://Assets/Sprites/Solid_Blocks/PipeConnection.png" id="9_8qgrc"]
+[ext_resource type="Texture2D" uid="uid://b5sqfy41h20ks" path="res://Assets/Sprites/Solid_Blocks/PipeTop.png" id="10_tnrj0"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uff7v"]
+texture = ExtResource("1_bgik6")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ado76"]
+texture = ExtResource("2_yqkdv")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5qaol"]
+texture = ExtResource("3_5qs17")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ibiln"]
+texture = ExtResource("4_7smx2")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kqkng"]
+texture = ExtResource("5_jcgxg")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_win2m"]
+texture = ExtResource("6_j6u1x")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xx8sg"]
+texture = ExtResource("7_qch5v")
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_t8d8x"]
+texture = ExtResource("8_07kip")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_n1nm6"]
+texture = ExtResource("9_8qgrc")
+2:0/0 = 0
+3:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fckso"]
+texture = ExtResource("10_tnrj0")
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_uli10"]
+physics_layer_0/collision_layer = 2
+physics_layer_0/collision_mask = 5
+sources/0 = SubResource("TileSetAtlasSource_uff7v")
+sources/1 = SubResource("TileSetAtlasSource_ado76")
+sources/2 = SubResource("TileSetAtlasSource_5qaol")
+sources/3 = SubResource("TileSetAtlasSource_ibiln")
+sources/4 = SubResource("TileSetAtlasSource_kqkng")
+sources/5 = SubResource("TileSetAtlasSource_win2m")
+sources/6 = SubResource("TileSetAtlasSource_xx8sg")
+sources/7 = SubResource("TileSetAtlasSource_t8d8x")
+sources/8 = SubResource("TileSetAtlasSource_n1nm6")
+sources/9 = SubResource("TileSetAtlasSource_fckso")
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TileMapSolidSurface" type="TileMapLayer" parent="."]
+position = Vector2(12, 0)
+tile_map_data = PackedByteArray("AAD9/wEAAAAAAAAAAAD+/wEAAAAAAAAAAAD//wEAAAAAAAAAAAAAAAEAAAAAAAAAAAABAAEAAAAAAAAAAAACAAEAAAAAAAAAAAADAAEAAAAAAAAAAAADAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAD8/wAAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_uli10")
